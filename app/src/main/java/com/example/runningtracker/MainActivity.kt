@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         //we choose bootom nav item id same as that of fragment id in (check in nav_graph)
         bottomNavigationView.setupWithNavController(navHostFragment.findNavController())
 
+        bottomNavigationView.setOnNavigationItemReselectedListener { /* to solve reselect problem*/ }  //do noting on re selecting
+
         //we only want to show our bottom nav in run,statistics,settings
         navHostFragment.findNavController()
             .addOnDestinationChangedListener { _, destination, _ ->
