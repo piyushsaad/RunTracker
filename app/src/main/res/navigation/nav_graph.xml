@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/runSetup"
+    tools:ignore="ExtraText">
+
+    <action android:id="@+id/action_global_trackingFragment"
+        app:destination="@id/runTracking"
+        app:launchSingleTop="true" />
+
+
+    <fragment
+        android:id="@+id/runFragment"
+        android:name="com.example.runningtracker.fragments.RunFragment"
+        android:label="RunFragment" >
+        <action
+            android:id="@+id/action_runFragment_to_runTracking"
+            app:destination="@id/runTracking" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/runSetup"
+        android:name="com.example.runningtracker.fragments.SetupFragment"
+        android:label="RunSetup" >
+        <action
+            android:id="@+id/action_runSetup_to_runFragment"
+            app:destination="@id/runFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/runSettings"
+        android:name="com.example.runningtracker.fragments.SettingsFragment"
+        android:label="RunSettings" />
+    <fragment
+        android:id="@+id/runStatistics"
+        android:name="com.example.runningtracker.fragments.StatisticsFragment"
+        android:label="RunStatistics" />
+    <fragment
+        android:id="@+id/runTracking"
+        android:name="com.example.runningtracker.fragments.TrackingFragment"
+        android:label="RunTracking" >
+        <action
+            android:id="@+id/action_runTracking_to_runFragment"
+            app:destination="@id/runFragment" />
+    </fragment>
+</navigation>
